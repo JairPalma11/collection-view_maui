@@ -69,10 +69,24 @@
 	  <None Remove="Models\" />
 	  <None Remove="Pages\" />
 	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\person_icon.svg" />
+	  <None Remove="Resources\Images\info_icon.svg" />
+	  <None Remove="Resources\Images\hamburger_icon.svg" />
+	  <None Remove="Resources\Images\email_icon.svg" />
+	  <None Remove="Resources\Images\call_icon.svg" />
+	  <None Remove="Resources\Images\empty_contacts.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Models\" />
 	  <Folder Include="Pages\" />
 	  <Folder Include="Services\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\person_icon.svg" />
+	  <BundleResource Include="Resources\Images\info_icon.svg" />
+	  <BundleResource Include="Resources\Images\hamburger_icon.svg" />
+	  <BundleResource Include="Resources\Images\email_icon.svg" />
+	  <BundleResource Include="Resources\Images\call_icon.svg" />
+	  <BundleResource Include="Resources\Images\empty_contacts.png" />
 	</ItemGroup>
 </Project>

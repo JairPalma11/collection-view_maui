@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewMAUI.Pages.GridCollectionViewPage"
+             Title="GridCollectionViewPage">
+     <ContentPage.ToolbarItems>
+
+        <ToolbarItem
+            Clicked="ContactsAdded"
+            Text="Agregar" />
+
+    </ContentPage.ToolbarItems>
+    <CollectionView
+        
+        x:Name="collectionView">
+
+        <CollectionView.ItemsLayout>
+            <!--
+            <LinearItemsLayout
+                
+                Orientation="Horizontal" />
+            -->
+
+            <GridItemsLayout
+                Orientation="Vertical"
+                Span="2"/>
+        </CollectionView.ItemsLayout>
+
+        <CollectionView.ItemTemplate>
+
+            <DataTemplate>
+
+                <ContentView>
+
+                     <VerticalStackLayout
+                        Padding="10"
+                        Spacing="8">
+                        <Image
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            Source="person_icon" />
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            FontSize="Medium"
+                            Text="{Binding Fullname}" />
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            FontSize="Small"
+                            Text="{Binding PhoneNumber}" />
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            FontSize="Caption"
+                            Text="{Binding DateCreated}" />
+                    </VerticalStackLayout>
+
+                </ContentView>
+
+            </DataTemplate>
+
+        </CollectionView.ItemTemplate>
+        <CollectionView.EmptyView>
+
+            <ContentView>
+
+                <VerticalStackLayout
+                    Spacing="10"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+
+                    <Image
+                        HeightRequest="300"
+                        Source="empty_contacts" />
+
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        FontSize="26"
+                        Opacity="0.70"
+                        Text="¡No tienes contactos todavía, agrega uno para comenzar!" />
+
+                </VerticalStackLayout>
+
+            </ContentView>
+
+        </CollectionView.EmptyView>
+    </CollectionView>
+</ContentPage>
