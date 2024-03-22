@@ -4,6 +4,13 @@
              x:Class="CollectionViewMAUI.Pages.SimpleCollectionViewPage"
              Padding="20"
              Title="Contactos">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem
+            Clicked="ContactsAdded"
+            Text="Agregar" />
+
+    </ContentPage.ToolbarItems>
     <CollectionView
         x:Name="collectionView">
 
@@ -42,6 +49,29 @@
             </DataTemplate>
 
         </CollectionView.ItemTemplate>
+        <CollectionView.EmptyView>
 
+            <ContentView>
+
+                <VerticalStackLayout
+                    Spacing="10"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+
+                    <Image
+                        HeightRequest="300"
+                        Source="empty_contacts" />
+
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        FontSize="26"
+                        Opacity="0.70"
+                        Text="¡No tienes contactos todavía, agrega uno para comenzar!" />
+
+                </VerticalStackLayout>
+
+            </ContentView>
+
+        </CollectionView.EmptyView>
     </CollectionView>
 </ContentPage>

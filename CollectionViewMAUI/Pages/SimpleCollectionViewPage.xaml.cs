@@ -6,6 +6,10 @@ public partial class SimpleCollectionViewPage : ContentPage
 	public SimpleCollectionViewPage()
 	{
 		InitializeComponent();
-		collectionView.ItemsSource = ContactService.GetContacts(10);
+    }
+
+    void ContactsAdded(System.Object sender, System.EventArgs e)
+    {
+        collectionView.ItemsSource = ContactService.GetContacts(10);
     }
 }
