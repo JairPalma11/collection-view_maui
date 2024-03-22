@@ -12,8 +12,12 @@ public partial class App : Application
 
         //descomentar para ver segundo ejemplo
         //layout en CollectionView Grid
-        MainPage = new NavigationPage(new GridCollectionViewPage());
+        //MainPage = new NavigationPage(new GridCollectionViewPage());
 
+        //descomentar para ver las acciones
+        //en contexto
+        MainPage = new NavigationPage(new ContextActionsCollectionViewPage());
+        
     }
 }
 

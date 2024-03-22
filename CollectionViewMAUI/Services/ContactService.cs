@@ -1,14 +1,13 @@
 ﻿using System;
-//para evitar conflictos con otros Contact
-using Contact = CollectionViewMAUI.Models.Contact;
+using CollectionViewMAUI.Models;
 
 namespace CollectionViewMAUI.Services
 {
 	public static class ContactService
 	{
-		public static IList<Contact> GetContacts(int quantity = 10)
+		public static IList<MyContact> GetContacts(int quantity = 10)
 		{
-			var contacts = new List<Contact>();
+			var contacts = new List<MyContact>();
 
             if (quantity <= 0)
             {
@@ -17,8 +16,8 @@ namespace CollectionViewMAUI.Services
 
             for (var i = 0; i < quantity; i++)
 			{
-				contacts.Add(new Contact
-				{
+				contacts.Add(new MyContact
+                {
 					FirstName = $"Dummy {i}",
 					LastName = "Last",
 					PhoneNumber = CreateRandomPhone(),

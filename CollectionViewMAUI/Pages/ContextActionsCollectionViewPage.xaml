@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewMAUI.Pages.ContextActionsCollectionViewPage"
+             Padding="20"
+             Title="Contactos">
+        <ContentPage.ToolbarItems>
+
+        <ToolbarItem
+            Clicked="ContactsAdded"
+            Text="Agregar" />
+
+    </ContentPage.ToolbarItems>
+    <CollectionView
+        x:Name="collectionView">
+
+        <CollectionView.ItemTemplate>
+
+            <DataTemplate>
+
+                <ContentView>
+
+                     <SwipeView>
+
+                        <SwipeView.RightItems>
+
+                          
+                            <SwipeItem
+                                BackgroundColor="Red"
+                                CommandParameter="{Binding .}"
+                                Clicked="OnDelete"
+                                Text="Eliminar" />
+                            
+                            <!--
+                            <SwipeItemView
+                                BackgroundColor="#FF8A80">
+
+                                <VerticalStackLayout
+                                    VerticalOptions="CenterAndExpand"
+                                    Margin="10">
+
+                                    <Image
+                                        HeightRequest="32"
+                                        WidthRequest="32"
+                                        Source="delete_icon" />
+                                    <Label
+                                        HorizontalTextAlignment="Center"
+                                        Text="Eliminar" />
+                                </VerticalStackLayout>
+
+                            </SwipeItemView>
+
+                            -->
+
+                        </SwipeView.RightItems>
+
+                        <SwipeView.LeftItems>
+
+                            <!--
+                            <SwipeItem
+                                BackgroundColor="Blue"
+                                CommandParameter="{Binding .}"
+                                Clicked="OnCall"
+                                Text="Llamar" />
+
+                            -->
+
+                            <SwipeItemView
+                                BackgroundColor="#00BCD4">
+
+                                <Image
+                                    Margin="10"
+                                    HeightRequest="32"
+                                    WidthRequest="32"
+                                    Source="calling_icon" />
+
+                            </SwipeItemView>
+
+                        </SwipeView.LeftItems>
+                        <HorizontalStackLayout
+                            Spacing="12"
+                            Margin="10">
+
+                            <Image
+                                VerticalOptions="CenterAndExpand"
+                                HeightRequest="50"
+                                Source="person_icon" />
+
+                            <VerticalStackLayout
+                                Spacing="8">
+                                <Label
+                                    FontSize="Medium"
+                                    Text="{Binding Fullname}" />
+                                <Label
+                                    FontSize="Small"
+                                    Text="{Binding PhoneNumber}" />
+                                <Label
+                                    FontSize="Caption"
+                                    Text="{Binding DateCreated}" />
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+                    </SwipeView>
+
+                </ContentView>
+
+            </DataTemplate>
+
+        </CollectionView.ItemTemplate>
+        <CollectionView.EmptyView>
+
+            <ContentView>
+
+                 <VerticalStackLayout
+                        Spacing="10"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand">
+
+                        <Image
+                            HeightRequest="300"
+                            Source="empty_contacts" />
+
+                        <Label
+                            HorizontalTextAlignment="Center"
+                            FontSize="26"
+                            Opacity="0.70"
+                            Text="¡No tienes contactos todavía, agrega uno para comenzar!" />
+
+                    </VerticalStackLayout>
+
+            </ContentView>
+
+        </CollectionView.EmptyView>
+    </CollectionView>
+</ContentPage>
