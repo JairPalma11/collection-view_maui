@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CollectionViewMAUI.Pages.SimpleCollectionViewPage"
-             Title="SimpleCollectionViewPage">
+             Padding="20"
+             Title="Contactos">
     <CollectionView
         x:Name="collectionView">
 
@@ -12,18 +13,25 @@
 
                 <ContentView>
 
-                    <HorizontalStackLayout>
+                    <HorizontalStackLayout
+                        Spacing="12"
+                        Margin="10">
 
                         <Image
+                            VerticalOptions="CenterAndExpand"
                             HeightRequest="50"
-                            Source="dotnet_bot" />
+                            Source="person_icon" />
 
-                        <VerticalStackLayout>
+                        <VerticalStackLayout
+                            Spacing="8">
                             <Label
+                                FontSize="Medium"
                                 Text="{Binding Fullname}" />
                             <Label
+                                FontSize="Small"
                                 Text="{Binding PhoneNumber}" />
                             <Label
+                                FontSize="Caption"
                                 Text="{Binding DateCreated}" />
                         </VerticalStackLayout>
 
