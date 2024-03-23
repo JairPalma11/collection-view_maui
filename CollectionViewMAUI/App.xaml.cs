@@ -16,8 +16,11 @@ public partial class App : Application
 
         //descomentar para ver las acciones
         //en contexto
-        MainPage = new NavigationPage(new ContextActionsCollectionViewPage());
-        
+        //MainPage = new NavigationPage(new ContextActionsCollectionViewPage());
+
+        //descomentar para ver selecion
+        //en collection view
+        MainPage = new NavigationPage(new SeleccionCollectionViewPage());
     }
 }
 

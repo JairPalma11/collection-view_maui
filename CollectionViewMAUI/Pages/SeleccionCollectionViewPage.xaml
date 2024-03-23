@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CollectionViewMAUI.Pages.GridCollectionViewPage"
+             x:Class="CollectionViewMAUI.Pages.SeleccionCollectionViewPage"
+             Padding="20"
              Title="Contactos">
-     <ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
 
         <ToolbarItem
             Clicked="ContactsAdded"
@@ -11,20 +12,9 @@
 
     </ContentPage.ToolbarItems>
     <CollectionView
-        
+        SelectionChanged="OnSelectionChanged"
+        SelectionMode="Multiple"
         x:Name="collectionView">
-
-        <CollectionView.ItemsLayout>
-            <!--
-            <LinearItemsLayout
-                
-                Orientation="Horizontal" />
-            -->
-
-            <GridItemsLayout
-                Orientation="Vertical"
-                Span="2"/>
-        </CollectionView.ItemsLayout>
 
         <CollectionView.ItemTemplate>
 
@@ -32,27 +22,29 @@
 
                 <ContentView>
 
-                     <VerticalStackLayout
-                        Padding="10"
-                        Spacing="8">
+                    <HorizontalStackLayout
+                        Spacing="12"
+                        Margin="10">
+
                         <Image
-                            HorizontalOptions="CenterAndExpand"
-                            HeightRequest="60"
-                            WidthRequest="60"
+                            VerticalOptions="CenterAndExpand"
+                            HeightRequest="50"
                             Source="person_icon" />
-                        <Label
-                            HorizontalTextAlignment="Center"
-                            FontSize="Medium"
-                            Text="{Binding Fullname}" />
-                        <Label
-                            HorizontalTextAlignment="Center"
-                            FontSize="Small"
-                            Text="{Binding PhoneNumber}" />
-                        <Label
-                            HorizontalTextAlignment="Center"
-                            FontSize="Caption"
-                            Text="{Binding DateCreated}" />
-                    </VerticalStackLayout>
+
+                        <VerticalStackLayout
+                            Spacing="8">
+                            <Label
+                                FontSize="Medium"
+                                Text="{Binding Fullname}" />
+                            <Label
+                                FontSize="Small"
+                                Text="{Binding PhoneNumber}" />
+                            <Label
+                                FontSize="Caption"
+                                Text="{Binding DateCreated}" />
+                        </VerticalStackLayout>
+
+                    </HorizontalStackLayout>
 
                 </ContentView>
 
