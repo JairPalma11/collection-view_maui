@@ -2,29 +2,51 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CollectionViewMAUI.Views.FavoriteContactView">
-     <HorizontalStackLayout
-         BackgroundColor="Red"
-        Spacing="12"
-        Margin="10">
+    <Border
+        Margin="20"
+        StrokeShape="RoundRectangle 10">
 
-        <Image
-            VerticalOptions="CenterAndExpand"
-            HeightRequest="50"
-            Source="person_icon" />
+        <AbsoluteLayout
+        HeightRequest="250">
+            <AbsoluteLayout.Background>
 
-        <VerticalStackLayout
+                <RadialGradientBrush>
+                    <GradientStop Color="{StaticResource Primary}"
+                              Offset="0.1" />
+                    <GradientStop Color="{StaticResource Magenta}"
+                              Offset="1.0" />
+                </RadialGradientBrush>
+
+            </AbsoluteLayout.Background>
+            <VerticalStackLayout
+            AbsoluteLayout.LayoutFlags="All"
+            AbsoluteLayout.LayoutBounds="0.50,0.50,0.50,0.50"
             Spacing="8">
-            <Label
+                <Border
+                StrokeShape="RoundRectangle 50"
+                HeightRequest="100"
+                WidthRequest="100">
+
+                    <Image
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    Source="fake_profile" />
+
+                </Border>
+                <Label
+                TextColor="White"
+                HorizontalTextAlignment="Center"
                 FontSize="Medium"
                 Text="{Binding Fullname}" />
-            <Label
+                <Label
+                TextColor="White"
+                HorizontalTextAlignment="Center"
                 FontSize="Small"
                 Text="{Binding PhoneNumber}" />
-            <Label
-                FontSize="Caption"
-                Text="{Binding DateCreated}" />
-        </VerticalStackLayout>
+            </VerticalStackLayout>
 
-     </HorizontalStackLayout>
+        </AbsoluteLayout>
+
+    </Border>
 </ContentView>
 

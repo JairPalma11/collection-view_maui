@@ -34,8 +34,11 @@
             ContactTemplate="{StaticResource ContactTemplate}"
             FavoriteContactTemplate="{StaticResource FavoriteContactTemplate}"/>
     </ContentPage.Resources>
-    <CollectionView
-        x:Name="collectionView">
+    <Grid>
+
+        <CollectionView
+            ItemSizingStrategy="MeasureAllItems"
+            x:Name="collectionView">
 
         <CollectionView.ItemTemplate>
 
@@ -69,4 +72,6 @@
 
         </CollectionView.EmptyView>
     </CollectionView>
+
+    </Grid>
 </ContentPage>
