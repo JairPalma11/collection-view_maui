@@ -20,7 +20,12 @@ public partial class App : Application
 
         //descomentar para ver selecion
         //en collection view
-        MainPage = new NavigationPage(new SeleccionCollectionViewPage());
+        //seleccion simple y multiple
+        //MainPage = new NavigationPage(new SeleccionCollectionViewPage());
+
+        //descomentar para ver funcionalidad
+        //data template
+        MainPage = new NavigationPage(new TemplateCollectionViewPage());
     }
 }
 

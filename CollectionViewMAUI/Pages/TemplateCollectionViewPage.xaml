@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectionViewMAUI.Pages.TemplateCollectionViewPage"
+             xmlns:templates="clr-namespace:CollectionViewMAUI.TemplateSelectors"
+             xmlns:views="clr-namespace:CollectionViewMAUI.Views"
+             Title="Plantillas">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem
+            Clicked="ContactsAdded"
+            Text="Agregar" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Resources>
+
+        <!-- Definimos los templates por cada view en cada escenario. -->
+        <DataTemplate x:Key="ContactTemplate">
+
+            <views:ContactView />
+
+        </DataTemplate>
+
+        <DataTemplate x:Key="FavoriteContactTemplate">
+
+            <views:FavoriteContactView />
+
+        </DataTemplate>
+
+        <!-- Asignamos los templates al template selector
+        para mostrar la informacion como se requiera-->
+        <templates:ContactTemplateSelector
+            x:Key="ContactTemplateSelector"
+            ContactTemplate="{StaticResource ContactTemplate}"
+            FavoriteContactTemplate="{StaticResource FavoriteContactTemplate}"/>
+    </ContentPage.Resources>
+    <CollectionView
+        x:Name="collectionView">
+
+        <CollectionView.ItemTemplate>
+
+            <templates:ContactTemplateSelector
+                ContactTemplate="{StaticResource ContactTemplate}"
+                FavoriteContactTemplate="{StaticResource FavoriteContactTemplate}"/>
+
+        </CollectionView.ItemTemplate>
+        <CollectionView.EmptyView>
+
+            <ContentView>
+
+                <VerticalStackLayout
+                    Spacing="10"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+
+                    <Image
+                        HeightRequest="300"
+                        Source="empty_contacts" />
+
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        FontSize="26"
+                        Opacity="0.70"
+                        Text="¡No tienes contactos todavía, agrega uno para comenzar!" />
+
+                </VerticalStackLayout>
+
+            </ContentView>
+
+        </CollectionView.EmptyView>
+    </CollectionView>
+</ContentPage>
