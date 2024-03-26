@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CollectionViewMAUI.Views.ContactView">
      <Grid
+         Margin="20, 10"
+         ColumnSpacing="10"
          HeightRequest="60"
          RowDefinitions="*"
          ColumnDefinitions="Auto, *">
