@@ -25,7 +25,10 @@ public partial class App : Application
 
         //descomentar para ver funcionalidad
         //data template
-        MainPage = new NavigationPage(new TemplateCollectionViewPage());
+        //MainPage = new NavigationPage(new TemplateCollectionViewPage());
+
+        //descomenta para refresh collection view
+        MainPage = new NavigationPage(new RefreshViewCollectionPage());
     }
 }
 
